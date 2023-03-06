@@ -1,2 +1,2 @@
-#!/usr/bin/env python3
-python execfile("main.py")
+#!/usr/bin/python3
+exec(PYFILE )
