@@ -1,2 +1,2 @@
 #!/bin/bash
-./PYFILE
+exec(open('PYFILE').read())
