@@ -22,7 +22,7 @@ def sub(a, b):
     """
     return (a - b)
 def mul(a, b):
-    """My subtraction function
+    """My multiplication function
 
     Args:
         a: first integer
@@ -32,7 +32,7 @@ def mul(a, b):
     """
     return (a * b)
 def div(a, b):
-    """My subtraction function
+    """My division function
 
     Args:
         a: first integer
