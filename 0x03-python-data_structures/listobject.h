@@ -42,8 +42,6 @@ PyAPI_FUNC(int) PyList_Reverse(PyObject *);
 PyAPI_FUNC(PyObject *) PyList_AsTuple(PyObject *);
 PyAPI_FUNC(PyObject *) _PyList_Extend(PyListObject *, PyObject *);
 
-int is-palindrome(listint_t **head);
-
 /* Macro, trading safety for speed */
 #define PyList_GET_ITEM(op, i) (((PyListObject *)(op))->ob_item[i])
 #define PyList_SET_ITEM(op, i, v) (((PyListObject *)(op))->ob_item[i] = (v))

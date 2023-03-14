@@ -1,7 +1,11 @@
+#include "lists.h"
 #include <stdio.h>
 
 int main(void)
 {
 
-	print
+	PyObject ob_base;
+
+	print("%s", ob_base);
+	return (0);
 }
