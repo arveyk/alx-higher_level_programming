@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 import sys
 n = len(sys.argv)
-    #if __name__ == "__main__":
-for i in range(1, n):
-    sum += int(sys.argv[i])
-    print("{}".format(sum))
+summ = 0
+for i in range(n):
+    summ += int(sys.argv[i])
+    if i == 0:
+        summ += 0
+        print("{}".format(summ))
+    print("{}".format(summ))
