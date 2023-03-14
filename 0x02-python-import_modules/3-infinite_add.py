@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def main():
     n = len(sys.argv)
     summ = 0
