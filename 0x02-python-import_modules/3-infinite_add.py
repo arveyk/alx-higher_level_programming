@@ -1,10 +1,16 @@
 #!/usr/bin/python3
 import sys
-n = len(sys.argv)
-summ = 0
-for i in range(n):
-    summ += int(sys.argv[i])
-    if i == 0:
-        summ += 0
-        print("{}".format(summ))
-    print("{}".format(summ))
+
+def main():
+    n = len(sys.argv)
+    summ = 0
+    if n == 1:
+        print("{:d}".format(summ))
+    else:
+        for i in range(1, n):
+            summ += int(sys.argv[i])
+        print("{:d}".format(summ))
+
+
+if __name__ == "__main__":
+    main()
