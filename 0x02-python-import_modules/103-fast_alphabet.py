@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import string 
+import string
 print("{:s}".format(string.ascii_uppercase[:26]))
