@@ -1,4 +1,13 @@
 #!/usr/bin/python3
-from hidden_4 import *
+import hidden_4
 
-print("{}".format(__all__))
+
+def main():
+    for st in dir(hidden_4):
+        if ord(st[0]) == 95:
+            continue
+        print("{:s}".format(st))
+
+
+if __name__ == "__main__":
+    main()
