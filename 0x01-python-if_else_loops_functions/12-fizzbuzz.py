@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+
+
 def fizzbuzz():
     for i in range(1, 101, 1):
         if i % 15 == 0:

@@ -1,2 +1,2 @@
 #!/bin/bash
-exec(open('PYFILE').read())
+PYCMD=($PYFILE)
