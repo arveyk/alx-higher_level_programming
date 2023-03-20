@@ -16,12 +16,14 @@ listint_t *insert_node(listint_t **head, int number)
 	size_t r = 0;
 
 	if (head == NULL)
-		return (NULL);
+		(*head) = new;
 
-	while (r++ < 4 && ptr->next != NULL)
-	{
-
+	while (r++ < 4)
 		ptr = ptr->next;
+	if (ptr->next == NULL)
+	{
+	
+		ptr->next = new;
 	}
 
 	new = (listint_t *)malloc(sizeof(listint_t));
