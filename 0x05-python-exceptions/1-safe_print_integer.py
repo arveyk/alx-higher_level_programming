@@ -5,5 +5,5 @@ def safe_print_integer(value):
     try:
         if ord(value):
             return True
-    except TypeError:
+    except:
         return False
