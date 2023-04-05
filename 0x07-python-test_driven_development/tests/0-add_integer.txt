@@ -1,0 +1,17 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(2, 2)
+4
+>>> add_integer(4, 'None')
+'b must be an integer'
+>>> add_integer('', 1)
+'a must be an integer'
+>>> add_integer(1, '')
+'b must be an integer'
+>>> add_integer(0, 0)
+0
+>>> add_integer("a string", 72)
+'a must be an integer'
+>>> add_integer(15, "sting")
+'b must be an integer'
+>>> add_integer('None', 4)
+'a must be an integer'
