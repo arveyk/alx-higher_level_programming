@@ -3,4 +3,5 @@
 
 
 class Square:
+    """ this simpy passes """
     pass
