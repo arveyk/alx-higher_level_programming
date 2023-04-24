@@ -4,4 +4,5 @@
 
 
 def lookup(obj):
+    """Hmmm What does this do?"""
     return list(dir(obj))
