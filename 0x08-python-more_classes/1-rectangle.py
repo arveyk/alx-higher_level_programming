@@ -15,6 +15,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
+        """Sets the Width of the rectangle"""
         try:
             self.__width = value
             if value < 0:
@@ -29,6 +30,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
+        """defines the height of the rectangle"""
         try:
             self.__height = value
             if value < 0:
