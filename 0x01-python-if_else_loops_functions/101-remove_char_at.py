@@ -2,11 +2,10 @@
 def remove_char_at(str, n):
     ch = ""
     len_str = 0
-    l = 'q'
-    for l in str:
+    for search in str:
         if len_str == n:
             pass
         else:
-            ch += l
+            ch += search
         len_str += 1
     return ch
