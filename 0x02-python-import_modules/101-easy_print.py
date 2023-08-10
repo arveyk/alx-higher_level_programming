@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-write("#pythoniscool")
+import logging; log = logging.getLogger(__name__); log.warning("#pythoniscool")
