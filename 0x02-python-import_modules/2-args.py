@@ -9,6 +9,6 @@ if __name__ == "__main__":
     elif y == 0:
         print("{:d} arguments.".format(y))
     else:
-        print("{:d} argument:".format(y))
+        print("{:d} arguments:".format(y))
         for arg_s in range(1, y + 1):
             print("{:d}: {:s}".format(arg_s, argv[arg_s]))
