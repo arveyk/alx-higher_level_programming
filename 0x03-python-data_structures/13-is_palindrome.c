@@ -19,7 +19,7 @@ int is_palindrome(listint_t **head)
 	int end;
 
 	if (head == NULL || *head == NULL)
-		return (0);
+		return (1);
 	while (trav != NULL)
 	{
 		trav = trav->next;
@@ -28,7 +28,7 @@ int is_palindrome(listint_t **head)
 	trav = *head;
 	if (counter <= 3)
 	{
-		if (counter == 1 || counter == 0)
+		if (counter == 1)
 			return (1);
 		if (counter == 2)
 		{
