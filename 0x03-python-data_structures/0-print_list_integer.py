@@ -2,9 +2,8 @@
 
 
 def print_list_integer(my_list=[]):
-    a = len(my_list)
-    if a == 0:
-        print()
+    if my_list is None:
+        pass
     else:
         for j in range(a):
             z = int(my_list[j])
