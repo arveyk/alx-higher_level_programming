@@ -2,6 +2,10 @@
 
 
 def print_reversed_list_integer(my_list=[]):
-    my_list.reverse()
-    for k in my_list:
-        print("{:d}".format(k))
+    if my_list is None:
+        pass
+    else:
+        span = len(my_list) - 1
+        while span >= 0:
+            print("{:d}".format(my_list[span]))
+            span -= 1
