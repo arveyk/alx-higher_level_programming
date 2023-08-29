@@ -19,11 +19,9 @@ class Square:
         """
     @property
     def size(self):
-        """getter retrieves the value of size
-        Args:
-            value: size of a square
-        Returns:
-            dimensions of square
+        """Value getter and setter
+        getter: retrieves the value of size
+        setter: changes the dimensions of square
         """
         return self.__size
 
