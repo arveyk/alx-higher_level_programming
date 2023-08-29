@@ -26,15 +26,14 @@ class Square:
             dimensions of square
         """
         return self.__size
-    @size.setter
 
+    @size.setter
     def size(self, value):
         if type(value) is not int:
             raise TypeError("size must be an integer")
         self.__size = value
         if value < 0:
             raise ValueError('size must be >= 0')
-
 
     def area(self):
         """area method computes the area of a square
