@@ -6,13 +6,9 @@ There is an additional optional size: def __init__(self, size=0):
 
 class Square:
     """Class Square demonstrate a private instance attribute
+
     """
     def __init__(self, size=0):
-        """__init__ initializes the private instance attribute
-
-        Args:
-            size: size of a square, an integer
-        """
         self.__size = (size)
         if type(size) is not int:
             raise TypeError('size must be an integer:')
