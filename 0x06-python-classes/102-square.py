@@ -18,6 +18,7 @@ class Square():
             print("size must be a number", e)
         if size < 0:
             raise ValueError('size must be >= 0')
+
     @property
     def size(self):
         """Value getter and setter
@@ -56,7 +57,7 @@ class Square():
 
     def __ge__(self, compareWith):
         """ compares if square a is less than square b"""
-        return self.__size >= compareWith.__size 
+        return self.__size >= compareWith.__size
 
     def area(self):
         """area method computes the area of a square
