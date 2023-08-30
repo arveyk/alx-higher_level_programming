@@ -10,7 +10,7 @@ class Square:
     """
     computes area of a square
     """
-    def __init__(self, size, position=(0, 0)):
+    def __init__(self, size=0):
         """
         Args:
             size: size of a square
@@ -21,9 +21,6 @@ class Square:
             self.__size = size
         except Exception as e:
             print("size must be an integer", e)
-        if size < 0:
-            raise ValueError('size must be >= 0')
-        self.__position = position
 
     @property
     def size(self):
@@ -42,21 +39,6 @@ class Square:
         if value < 0:
             raise ValueError('size must be >= 0')
 
-    @property
-    def position(self):
-        """
-        getter: retrieves value named position
-        setter: mutates position attribute
-        Type: tuple
-        """
-        return self.__position
-
-    @position.setter
-    def position(self, value):
-        try:
-            self.__position = value
-        except Exception as e:
-            print("size must a tuple of 2 positive integers", e)
         if len(self.__position) != 2:
             raise TypeError('position must be a tuple of 2 positive integers')
         
@@ -69,25 +51,3 @@ class Square:
             Area of a square
         """
         return self.__size ** 2
-
-    def my_print(self):
-        """
-        prints square pattern
-        Args:
-            None
-        Returns:
-            no Value
-        """
-        val = self.__size
-        """ wrapper value for __size"""
-        val2 = self.__position[0]
-        """ wrapper value for 1st argument int tuple"""
-        if val == 0:
-            print()
-        else:
-            for i in range(val):
-                print(" " * val2, end="")
-                for u in range(val):
-                    print("#", end="")
-                print()
-            print()
