@@ -1,3 +1,5 @@
 #file to ignore
 4_0main.py
-__pycache__
+101_0main.py
+__pycache_
+_

@@ -10,7 +10,7 @@ class Square:
     """
     computes area of a square
     """
-    def __init__(self, size, position=(0, 0)):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Args:
             size: size of a square
@@ -90,5 +90,6 @@ class Square:
                 print(" " * val2, end="")
                 for u in range(val):
                     print("#", end="")
-                print()
+                if i < val - 1:
+                    print()
             print()
