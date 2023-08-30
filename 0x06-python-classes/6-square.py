@@ -80,12 +80,19 @@ class Square:
             no Value
         """
         val = self.__size
-        """ wrapper value for __size"""
+        """ alias value for __size"""
         val2 = self.__position[0]
-        """ wrapper value for 1st argument int tuple"""
+        """ alias value for 1st argument int tuple"""
+        val3 = self.__position[1]
+        """ alias value for 2nd argument int tuple"""
         if val == 0:
             print()
         else:
+            if val3 is not None:
+                b = 0
+                while b < val3:
+                    print()
+                    b += 1
             for i in range(val):
                 print(" " * val2, end="")
                 for u in range(val):
