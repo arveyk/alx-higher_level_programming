@@ -63,7 +63,8 @@ class Square:
             print()
         else:
             for i in range(val):
-                print()
                 for u in range(val):
                     print("#", end="")
+                if i < val - 1:
+                    print()
             print()
