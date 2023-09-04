@@ -106,5 +106,11 @@ class Rectangle:
             raise TypeError('rect_1 must be an instance of Rectangle')
         if type(rect_2) is not Rectangle:
             raise TypeError('rect_2 must be an instance of Rectangle')
-        if rect_1 == rect_2:
+        if Rectangle.__eq__(rect_1, rect_2) is rect_1:
             return rect_1
+    def __eq__(rect_1, rect_2):
+        if rect_1.__width != rect_2.__width:
+            return None
+        if rect_1.__height != rect_2.__height:
+            return None
+        return rect_1
