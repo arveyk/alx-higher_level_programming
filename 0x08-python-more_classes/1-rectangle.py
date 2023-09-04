@@ -7,7 +7,12 @@ class Rectangle:
     are >= 0
     """
     def __init__(self, width=0, height=0):
-        """Initialize every intatance object"""
+        """Initialize every intatance object
+            Args:
+                width: the width of the rectagle
+                height: the Height of the rectangle
+            Returns: no return value
+        """
         self.__height = height
         self.__width = width
 
