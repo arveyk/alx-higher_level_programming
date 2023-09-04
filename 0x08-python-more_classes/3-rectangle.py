@@ -19,7 +19,7 @@ class Rectangle:
         # __height should this be commented?
         self.__width = width
         # __width and this as well?
-        
+
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ''
@@ -63,7 +63,7 @@ class Rectangle:
                 None
             Returns: the area computed
             """
-        return self.__width  * self.__height
+        return self.__width * self.__height
 
     def perimeter(self):
         """calculates the perimeter of a rectangle

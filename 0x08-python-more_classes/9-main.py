@@ -2,5 +2,5 @@
 Rectangle = __import__('9-rectangle').Rectangle
 
 my_square = Rectangle.square(5)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+print("Area: {} - Perimeter: {}".format(my_square.area(), my_square.perimeter()))
 print(my_square)
