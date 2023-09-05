@@ -1,0 +1,33 @@
+==============================
+Testing the printing function
+==============================
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("John", "Smith") #doctest: +REPORT_NDIFF
+	My name is John Smith
+
+==============================
+Second variable is a number
+==============================
+
+	>>> say_my_name(12, "Harvey") #doctest: +REPORT_NDIFF
+	Traceback (most recent call last):
+    		...
+	    raise TypeError('first_name must be a string')
+	TypeError: first_name must be a string
+
+==============================
+First Variable is a number
+==============================
+
+	>>> say_my_name("Dent", 12) #doctest: +REPORT_NDIFF
+	Traceback (most recent call last):
+		...
+	    raise TypeError('last_name must be a string')
+	TypeError: last_name must be a string
+
+==============================
+Empty String
+==============================
+	>>> say_my_name("") #doctest: +REPORT_NDIFF
+	My name is  

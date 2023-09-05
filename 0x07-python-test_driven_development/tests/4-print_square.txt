@@ -1,0 +1,39 @@
+
+==============================
+Printing a square as should be
+==============================
+
+>>> print_square = __import__('4-print_square').print_square
+>>> print_square(4)
+####
+####
+####
+####
+
+==============================
+Attempting to pass a string
+==============================
+
+>>> print_square('k')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/charles/alx-system_engineering-devops/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 6, in print_square
+    raise TypeError('size must be an integer')
+TypeError: size must be an integer
+
+==============================
+Attempting a float
+==============================
+
+>>> print_square(5.7)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/charles/alx-system_engineering-devops/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 6, in print_square
+    raise TypeError('size must be an integer')
+TypeError: size must be an integer
+
+==============================
+Passing a zero
+==============================
+>>> print_square(0)
+>>>
