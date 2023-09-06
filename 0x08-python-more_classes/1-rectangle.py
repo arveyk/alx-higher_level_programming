@@ -9,6 +9,16 @@ class Rectangle:
     are >= 0
     """
 
+    def __init__(self, width=0, height=0):
+        """Initialize every intatance object
+            Args:
+                width: the width of the rectagle
+                height: the Height of the rectangle
+            Returns: no return value
+        """
+        self.__height = height
+        self.__width = width
+
     @property
     def width(self):
         """getter: retrives the class attribute
@@ -42,13 +52,3 @@ class Rectangle:
         if value < 0:
             raise ValueError('height must be >= 0')
         self.__height = value
-
-    def __init__(self, width=0, height=0):
-        """Initialize every intatance object
-            Args:
-                width: the width of the rectagle
-                height: the Height of the rectangle
-            Returns: no return value
-        """
-        self.__height = height
-        self.__width = width
