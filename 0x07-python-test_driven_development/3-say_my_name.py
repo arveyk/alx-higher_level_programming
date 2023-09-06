@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This Function prints the strings first_name and last_name
+    It checks if the arguments passed are strings or not
+"""
 def say_my_name(first_name, last_name=""):
     """Prints name give to it
         Args:
