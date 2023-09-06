@@ -3,6 +3,7 @@
     __slots__ is used to avoid dynamically created attributes
 """
 
+
 class LockedClass(object):
     """Creation of a Locked class, new instance attributes have to be
         called first_name
