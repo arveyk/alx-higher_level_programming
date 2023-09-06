@@ -1,31 +1,76 @@
 
 ==============================
-Lazy_matrix
+Lazy_matrix_mul
 ==============================
 
 >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
->>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])  #doctest: +REPORT_NDIFF
+array([[ 7, 10],
+       [15, 22]])
+>>>
+>>> lazy_matrix_mul([1, 2], [[4, 5], [6, 7]])
+array([16, 19])
+>>> lazy_matrix_mul([[1, 2], [3, 9]], [[4, 5], [6, 7]])
+array([[16, 19],
+       [66, 78]])
+>>>
+>>> lazy_matrix_mul([[1, 2], [3, 9]], [4, 5]) #doctest: +REPORT_NDIFF
+array([14, 57])
+
+===============================
+Incompatible Matrices
+===============================
+>>> lazy_matrix_mul([[1, 2], [3, 9]], [4]) #doctest: +REPORT_NDIFF
+Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 101-lazy_matrix_mul.txt[5]>", line 1, in <module>
+        lazy_matrix_mul([[1, 2], [3, 9]], [4]) #doctest: +REPORT_NDIFF
+      File "/home/charles/alx-system_engineering-devops/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 12, in lazy_matrix_mul
+        return mult
+UnboundLocalError: local variable 'mult' referenced before assignment
+>>>
+==============================
+Incompatible matrices
+==============================
+>>> lazy_matrix_mul([[1, 2], [3, 9]], [4, 5, 5]) #doctest: +REPORT_NDIFF
+Traceback (most recent call last):
+     File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+       exec(compile(example.source, filename, "single",
+     File "<doctest 101-lazy_matrix_mul.txt[6]>", line 1, in <module>
+       lazy_matrix_mul([[1, 2], [3, 9]], [4, 5, 5]) #doctest: +REPORT_NDIFF
+     File "/home/charles/alx-system_engineering-devops/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 12, in lazy_matrix_mul
+       return mult
+UnboundLocalError: local variable 'mult' referenced before assignment
+>>>
+==============================
+None-lists: Tuples
+==============================
+>>> lazy_matrix_mul((1, 2), ((3, 9), 4, 5, 5)) #doctest: +REPORT_NDIFF
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/charles/alx-system_engineering-devops/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 5, in lazy_matrix_mul
+    raise TypeError('m_a must be a list')
+TypeError: m_a must be a list
 >>>
 
-
 ==============================
-
+None list: Strings
 ==============================
->>>
-==============================
-
-==============================
->>>
->>>
-
-==============================
-
-==============================
->>>
->>>
+>>> lazy_matrix_mul('pp', 'list') #doctest: +REPORT_NDIFF
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/charles/alx-system_engineering-devops/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 5, in lazy_matrix_mul
+    raise TypeError('m_a must be a list')
+TypeError: m_a must be a list
 >>>
 
 ==============================
+Incompatible Matrices
 ==============================
->>>
->>>
+
+>>> lazy_matrix_mul([[1, 2], [3, 9]]) #doctest: +REPORT_NDIFF
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+>>> 
