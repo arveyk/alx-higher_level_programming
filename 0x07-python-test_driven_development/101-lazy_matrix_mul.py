@@ -10,4 +10,3 @@ def lazy_matrix_mul(m_a, m_b):
     except Exception as e:
         print(e)
     return mult
-
