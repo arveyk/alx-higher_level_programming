@@ -10,4 +10,4 @@ def is_same_class(obj, a_class):
             a_class: source/ root class
         Returns: True if it is
     """
-    return isinstance(obj, a_class)
+    return issubclass(obj, a_class)
