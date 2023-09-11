@@ -9,4 +9,4 @@ def lookup(obj):
             obj: the object to be evaluated
         Return: list of attributes an objects
     """
-    return list(obj.__dict__)
+    return list(dir(obj))
