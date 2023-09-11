@@ -11,4 +11,3 @@ def is_same_class(obj, a_class):
         Returns: True if it is
     """
     return isinstance(obj.__class__, a_class)
-
