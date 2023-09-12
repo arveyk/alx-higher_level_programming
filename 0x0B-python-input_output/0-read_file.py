@@ -2,6 +2,7 @@
 """ File reading module
 """
 
+
 def read_file(filename=""):
     """this function opens and reads a file within a with construct
         Args:
