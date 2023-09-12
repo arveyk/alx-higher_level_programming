@@ -2,6 +2,7 @@
 """Writing a Base Geometry class
 """
 
+
 class BaseGeometry():
     """Calculates the area for given dimansions
     it raises an exception message
