@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+"""Module that defines Student class
+"""
+
+
+class Student:
+    """
+    Defines a student with first name, last name and age credentials
+    """
+    def __init__(self, first_name, last_name, age):
+        """Initializes the class attribute on every object or instance
+        of the class
+            Args:
+                first_name: 1st name of the student
+                last_name: 2nd identifier for the student
+                age: the numerical count of number of yrs lived
+                    by the student
+            Returns: No return value
+        """
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self, attr=None):
+        """return dictionary for JSON serialization of an object
+        Args:
+            obj: the class object
+        Returns: the dictionary description
+        """
+        if type(attr) is list:
+            return (attr)
+
+        return dict(self.__dict__)
