@@ -14,7 +14,7 @@ try:
     print(my_set)
     print(type(my_set))
 except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e)):wq
+    print("[{}] {}".format(e.__class__.__name__, e))
 
 try:
     filename = "my_fake.json"
@@ -22,4 +22,4 @@ try:
     print(my_set)
     print(type(my_set))
 except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e)):wq
+    print("[{}] {}".format(e.__class__.__name__, e))

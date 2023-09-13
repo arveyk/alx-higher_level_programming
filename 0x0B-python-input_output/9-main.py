@@ -3,7 +3,7 @@ Student = __import__('9-student').Student
 
 students = [Student("John", "Doe", 23), Student("Bob", "Dylan", 27)]
 
-from student in students:
+for student in students:
     j_student = student.to_json()
     print(type(j_student))
     print(j_student['first_name'])
