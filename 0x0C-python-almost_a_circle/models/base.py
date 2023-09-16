@@ -22,4 +22,3 @@ class Base:
             Base.__nb_objects += 1
             id = self.__nb_objects
             self.id = self.__nb_objects
-

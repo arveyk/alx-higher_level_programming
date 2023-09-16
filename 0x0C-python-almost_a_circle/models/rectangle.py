@@ -1,0 +1,121 @@
+#!/usr/bin/python3
+""" Module for Rectangle class definition """
+
+from models.base import Base
+
+
+class Rectangle(Base):
+    """ Defines a Rectangle, inherits from Base class
+    """
+#   super().__init()
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """ Class instance constructor
+            Args:
+                width: dimension of the rectangle
+                height: dimension of the rectangle
+                x: yet to know
+                y: yet to know
+            Returns: no return value
+            """
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
+        Base.__init__(self, id=None)
+        """self.id = 0
+        else:
+            Base.__nb_objects += 1
+            id = Base.__nb_objects
+            self.id = Base.__nb_objects
+        """
+        if id is not None:
+            self.id = id
+            Base.__nb_objects = self.id
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, width):
+        if type(width) is not int:
+            raise TypeError('width must be an integer')
+        if width <= 0:
+            raise ValueError('width must be > 0')
+        self.__width = width
+
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, height):
+        if type(height) is not int:
+            raise TypeError('height must be an integer')
+        if height <= 0:
+            raise ValueError('height must be > 0')
+        self.__height = height
+
+    @property
+    def x(self):
+        return self.__x
+
+    @x.setter
+    def x(self, x):
+        if type(x) is not int:
+            raise TypeError('x must be an integer')
+        if x < 0:
+            raise ValueError('x must be > 0')
+        self.__x = x
+
+    @property
+    def y(self):
+        return self.__y
+
+    @y.setter
+    def y(self, y):
+        if type(y) is not int:
+            raise TypeError('y must be an integer')
+        if y < 0:
+            raise ValueError('y must be > 0')
+        self.__y = y
+
+    def area(self):
+        return self.__width * self.__height
+
+    def display(self):
+        for d in range(self.y):
+            print()
+        for a in range(self.__height):
+            if a > 0:
+                print()
+            for x in range(self.x):
+                print(" ", end="")
+            for b in range(self.__width):
+                print('#', end="")
+        print()
+
+    def __str__(self):
+        cls_nm = (Rectangle.__name__)
+        string1 = f'[{cls_nm}] ({self.id}) {self.x}'
+        string2 = f'/{self.y} - {self.width}/{self.height}'
+        return (string1 + string2)
+
+    def update(self, *args, **kwargs):
+        if args is None or len(args) == 0:
+            for key, value in kwargs.iteritems():
+                self.__key = self.value
+        else:
+            arg0 = self.id
+            arg1 = self.__width
+            arg2 = self.__height
+            arg3 = self.__x
+            arg4 = self.__y
+
+            p = 0
+            args_list = [arg0, arg1, arg2, arg3, arg4]
+            for ar_g in args:
+                args_list[p] = ar_g
+                p += 1
+

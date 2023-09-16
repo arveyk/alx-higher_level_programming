@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ 1-main """
-from models.rectangle import Square
+from models.square import Square
 
 if __name__ == "__main__":
 
