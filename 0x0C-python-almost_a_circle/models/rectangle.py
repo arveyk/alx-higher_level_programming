@@ -129,19 +129,25 @@ class Rectangle(Base):
                 number of argument
             Returns: No explicit return value
         """
-        if kwargs is None or len(args) == 0:
+        if kwargs is not None and (args is None or len(args) == 0):
             for key, value in kwargs.items():
                 self.__key = value
         else:
-            arg0 = self.id
-            arg1 = self.__width
-            arg2 = self.__height
-            arg3 = self.__x
-            arg4 = self.__y
 
+            args_list = [0, 0, 0, -1, -1]
             p = 0
-            args_list = [arg0, arg1, arg2, arg3, arg4]
             for ar_g in args:
                 if ar_g is not None:
                     args_list[p] = ar_g
                 p += 1
+
+            if (args_list[0] != 0):
+                self.id = args_list[0]
+            if (args_list[1] != 0):
+                self.__width = args_list[1]
+            if (args_list[2] != 0):
+                self.__height = args_list[2]
+            if (args_list[3] >= 0):
+                self.__x = args_list[3]
+            if (args_list[4] >= 0):
+                self.__y = args_list[4]
