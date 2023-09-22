@@ -63,6 +63,10 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
+        """ Calculates the area of a triangle
+            Args: None
+            Returns: area calculated
+        """
         return self.__width * self.__height
 
     def display(self):
