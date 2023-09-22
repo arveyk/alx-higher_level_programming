@@ -7,31 +7,12 @@ from models.base import Base
 class Rectangle(Base):
     """ Defines a Rectangle, inherits from Base class
     """
-#   super().__init()
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Class instance constructor
-            Args:
-                width: dimension of the rectangle
-                height: dimension of the rectangle
-                x: yet to know
-                y: yet to know
-            Returns: no return value
-            """
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-
-        Base.__init__(self, id=None)
-        """self.id = 0
-        else:
-            Base.__nb_objects += 1
-            id = Base.__nb_objects
-            self.id = Base.__nb_objects
-        """
-        if id is not None:
-            self.id = id
-            Base.__nb_objects = self.id
 
     @property
     def width(self):
@@ -101,9 +82,9 @@ class Rectangle(Base):
         string1 = f'[{cls_nm}] ({self.id}) {self.x}'
         string2 = f'/{self.y} - {self.width}/{self.height}'
         return (string1 + string2)
-
+    
     def update(self, *args, **kwargs):
-        if args is None or len(args) == 0:
+        if kwargs is None or len(args) == 0:
             for key, value in kwargs.items():
                 self.__key = value
         else:
@@ -116,6 +97,6 @@ class Rectangle(Base):
             p = 0
             args_list = [arg0, arg1, arg2, arg3, arg4]
             for ar_g in args:
-                args_list[p] = ar_g
+                if ar_g is not None:
+                    args_list[p] = ar_g
                 p += 1
-

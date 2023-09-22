@@ -3,15 +3,20 @@
 
 
 from models.rectangle import Rectangle
+from models.base import Base
 
-class Square(Rectangle):
+class Square(Rectangle, Base):
     """ Defines a square, similar to a rectangle but 
         with width == height
     """
     def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(id, x, y, width, height)
-        self.width = width = size
-        self.height = size
+        self.__width = size
+        self.__height = size
+        self.__x = x
+        self.__y = y
+        Rectangle().__init__(id, width, height, x=0, y=0)
+        Base().__init__(id, width, height, x=0, y=0)
+
     def __str__(self):
         return f'[{Square}]'
 

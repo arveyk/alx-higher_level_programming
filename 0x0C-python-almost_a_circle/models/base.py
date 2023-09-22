@@ -7,7 +7,7 @@ class Base:
     """Class from which to inherit attributes
     """
     __nb_objects = 0
-    
+
     def __init__(self, id=None):
         """ class constructor
             Args:
