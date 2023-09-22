@@ -130,8 +130,24 @@ class Rectangle(Base):
             Returns: No explicit return value
         """
         if kwargs is not None and (args is None or len(args) == 0):
+            kw_list = [0, 0, 0, -1, -1]
+            kw_str = ["id", "width", "height", "x", "y"]
+
             for key, value in kwargs.items():
-                self.__key = value
+                k = 0
+                while k < 5:
+                    if value is not None:
+                        if kw_str[k] == str(key) and k == 0:
+                            self.id = value
+                        elif kw_str[k] == str(key) and k == 1:
+                            self.__width = value
+                        elif kw_str[k] == str(key) and k == 2:
+                            self.__height = value
+                        elif kw_str[k] == str(key) and k == 3:
+                            self.__x = value
+                        elif kw_str[k] == str(key) and k == 4:
+                            self.__y = value
+                    k += 1
         else:
 
             args_list = [0, 0, 0, -1, -1]
