@@ -24,6 +24,11 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """
+        getter:gets the dimention and validates
+        setter: sets it
+        """
+
         return self.__width
 
     @width.setter
@@ -36,6 +41,10 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """
+        getter:gets the dimention and validates
+        setter: sets it
+        """
         return self.__height
 
     @height.setter
@@ -48,6 +57,10 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """
+        getter:gets the dimention and validates
+        setter: sets it
+        """
         return self.__x
 
     @x.setter
@@ -60,6 +73,10 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """
+        getter:gets the dimention and validates
+        setter: sets it
+        """
         return self.__y
 
     @y.setter
@@ -78,6 +95,11 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        """ prints out the rectangle width units wide and height units
+            high
+            Args: None
+            Returns: no return value
+        """
         for d in range(self.y):
             print()
         for a in range(self.__height):
@@ -90,12 +112,23 @@ class Rectangle(Base):
         print()
 
     def __str__(self):
+        """ Returns the string representation of Rectangle class
+        Args: Self only
+        Returns: informal str representation
+        """
         cls_nm = (Rectangle.__name__)
         string1 = f'[{cls_nm}] ({self.id}) {self.x}'
         string2 = f'/{self.y} - {self.width}/{self.height}'
         return (string1 + string2)
-    
+
     def update(self, *args, **kwargs):
+        """ updates dimensions of rectangle
+            Args:
+                *args: access unknown number of arguments
+                **kwargs: access a key, value dictionary varied
+                number of argument
+            Returns: No explicit return value
+        """
         if kwargs is None or len(args) == 0:
             for key, value in kwargs.items():
                 self.__key = value
