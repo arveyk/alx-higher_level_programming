@@ -63,9 +63,9 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-        """ Calculates the area of a triangle
-            Args: None
-            Returns: area calculated
+        """ area fuctions calculates the area of a rectangle
+            Args: No args
+            Returns: area computed
         """
         return self.__width * self.__height
 
@@ -88,30 +88,19 @@ class Rectangle(Base):
         return (string1 + string2)
     
     def update(self, *args, **kwargs):
-        
-        p = 0
-        arg0, arg1, arg2, arg3, arg4 = 0, 0, 0, 0, 0
-        args_list = [arg0, arg1, arg2, arg3, arg4]
-        
-        if args is None and kwargs is not None:
-            alld_keys = {"id", "width", "height", "x", "y"}
-
-            '''self.__dict__.update((key, value) for key, value in kwargs.items() if key in alld_keys)'''
-            for k, v in kwargs.items():
-                setattr(self, k, v)
-
+        if kwargs is None or len(args) == 0:
+            for key, value in kwargs.items():
+                self.__key = value
         else:
+            arg0 = self.id
+            arg1 = self.__width
+            arg2 = self.__height
+            arg3 = self.__x
+            arg4 = self.__y
+
+            p = 0
+            args_list = [arg0, arg1, arg2, arg3, arg4]
             for ar_g in args:
-                args_list[p] = ar_g
+                if ar_g is not None:
+                    args_list[p] = ar_g
                 p += 1
-            
-            if args_list[0] != 0:
-                self.id = args_list[0]
-            if args_list[1] != 0:
-                self.__width = args_list[1]
-            if args_list[2] != 0:
-                self.__height = args_list[2]
-            if args_list[3] != 0:
-                self.__x = args_list[3]
-            if args_list[4] != 0:
-                self.__y = args_list[4]
