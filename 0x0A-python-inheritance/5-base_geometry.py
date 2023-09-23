@@ -2,6 +2,7 @@
 """Writing an empty class
 """
 
+
 class BaseGeometry():
     """This class is without attributes
     """
