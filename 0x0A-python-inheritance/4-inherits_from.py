@@ -9,4 +9,6 @@ def inherits_from(obj, a_class):
             obj: class to be evaluated
             a_class: (suspected to be)superclass
     """
-    return issubclass(obj.__class__, a_class)
+    if issubclass(obj.__class__, a_class):
+        if issubclass(a_class, obj.__class__) is not True:
+            return True
