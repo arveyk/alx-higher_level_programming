@@ -1,0 +1,66 @@
+
+================================
+================================
+
+>>> integer_validator = __import__('7-base_geometry').BaseGeometry().integer_validator
+>>>
+================================
+valid inputs
+================================
+>>> integer_validator("age", 89)
+>>>
+
+================================
+Float value
+================================
+>>> integer_validator("age", 13.2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/charles/alx-system_engineering-devops/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 28, in integer_validator
+    raise TypeError(name + ' must be an integer')
+TypeError: age must be an integer
+>>>
+================================
+Boolen value
+================================
+>>> integer_validator("age", True)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/charles/alx-system_engineering-devops/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 28, in integer_validator
+    raise TypeError(name + ' must be an integer')
+TypeError: age must be an integer
+
+================================
+String value
+================================
+>>> integer_validator("age", "32")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/charles/alx-system_engineering-devops/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 28, in integer_validator
+    raise TypeError(name + ' must be an integer')
+TypeError: age must be an integer
+
+================================
+List
+================================
+>>> integer_validator("age", [1, 2])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/charles/alx-system_engineering-devops/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 28, in integer_validator
+    raise TypeError(name + ' must be an integer')
+TypeError: age must be an integer
+>>>
+================================
+
+================================
+None
+================================
+>>> integer_validator("age", None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/charles/alx-system_engineering-devops/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 28, in integer_validator
+    raise TypeError(name + ' must be an integer')
+TypeError: age must be an integer
+>>>
+================================
+================================
