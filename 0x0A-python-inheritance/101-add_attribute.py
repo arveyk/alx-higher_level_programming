@@ -3,7 +3,7 @@
 
 
 def add_attribute(obj, name, value):
-    """ add_attribute adds an instance attribute if and only if it 
+    """ add_attribute adds an instance attribute if and only if it
     is possible
         Args:
             obj: the object to have an additional attribute
