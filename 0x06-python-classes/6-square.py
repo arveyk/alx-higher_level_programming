@@ -97,7 +97,7 @@ class Square:
         try:
             type(val2 + val3) is int
         except Exception as e:
-                print('position must be a tuple of 2 positive integers', e)
+            print('position must be a tuple of 2 positive integers', e)
         if val == 0:
             print()
         else:
