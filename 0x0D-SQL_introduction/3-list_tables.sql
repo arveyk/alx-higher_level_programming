@@ -4,4 +4,4 @@
 -- PREPARE stmt FROM @var;
 -- EXECUTE stmt;
 -- DEALLOCATE PREPARE stmt;
-SHOW TABLES  FROM information_schema;
+SHOW TABLES  FROM mysql;
