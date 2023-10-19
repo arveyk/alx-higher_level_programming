@@ -1,3 +1,5 @@
 -- Display all rows from tables
-USE hbtn_0c_0 IF EXISTS
-SELECT * FROM first_table
+SET @var := CONCAT('SELECT * FROM first_table');
+PREPARE stmt FROM @var;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
