@@ -4,4 +4,7 @@
 -- PREPARE stmt FROM @var;
 -- EXECUTE stmt;
 -- DEALLOCATE PREPARE stmt;
-SHOW TABLES FROM mysql;
+SET @var := CONCAT('SHOW TABLES FROM mysql;');
+PREPARE stmt FROM @var;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
