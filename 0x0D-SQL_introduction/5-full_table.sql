@@ -1,2 +1,2 @@
 -- Script to show full desc of table
-DESC first_table;
+SHOW CREATE TABLE first_table;
