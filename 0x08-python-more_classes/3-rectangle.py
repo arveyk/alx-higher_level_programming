@@ -15,15 +15,32 @@ class Rectangle:
                 height: the Height of the rectangle
             Returns: no return value
         """
-        self.__height = height
-        # __height should this be commented?
+#        if type(width) is int:
+#            if width < 0:
+#                raise ValueError('width must be >= 0')
         self.__width = width
-        # __width and this as well?
+#        else:
+#            raise TypeError('width must be an integer')
+
+#        if type(height) is int:
+#            if height < 0:
+#                raise ValueError('height must be >= 0')
+        self.__height = height
+#        else:
+#            raise TypeError('height must be an integer')
 
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ''
-        return (((f'#' * self.__width) + '\n') * self.__height)
+        wth = self.__width
+        hgt = self.__height
+        while (hgt > 0):
+            p = 0
+            for p in range(wth):
+                print("#", end='')
+            print()
+            hgt -= 1
+        return (f'{Rectangle.__name__}({self.__width}, {self.__height})')
 
     @property
     def width(self):
