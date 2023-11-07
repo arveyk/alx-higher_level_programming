@@ -35,12 +35,14 @@ class Rectangle:
         wth = self.__width
         hgt = self.__height
         while (hgt > 0):
-            p = 0
             for p in range(wth):
                 print("#", end='')
-            print()
+            if hgt > 1:
+                print()
             hgt -= 1
-        return (f'{Rectangle.__name__}({self.__width}, {self.__height})')
+        return ('')
+
+#        return (f'({self.__dict__}){self.__width, self.__height}')
 
     @property
     def width(self):
