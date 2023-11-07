@@ -34,7 +34,7 @@ class Rectangle:
     def __repr__(self):
         if self.__width == 0 or self.__height == 0:
             return ''
-        return  f'Rectangle({self.__width}, {self.__height})'
+        return f'Rectangle({self.__width}, {self.__height})'
 
     @property
     def width(self):
