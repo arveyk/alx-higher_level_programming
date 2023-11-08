@@ -27,7 +27,11 @@ class Student:
             obj: the class object
         Returns: the dictionary description
         """
+        new_dict = {}
         if type(attr) is list:
-            return (attr)
-
-        return dict(self.__dict__)
+            for name in attr:
+                if name in self.__dict__:
+                    new_dict[name] = self.__dict__[name]
+            return (new_dict)
+        else:
+            return dict(self.__dict__)
