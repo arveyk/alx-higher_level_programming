@@ -108,15 +108,14 @@ class Rectangle:
                 rect_2: second class att
             Returns: rect_1 if rect_1 is equal to rect_2
         """
-        area_1 = int(rect_1.area())
-        area_2 = int(rect_2.area())
         if type(rect_1) is not Rectangle:
             raise TypeError('rect_1 must be an instance of Rectangle')
         if type(rect_2) is not Rectangle:
             raise TypeError('rect_2 must be an instance of Rectangle')
+        area_1 = rect_1.area()
+        area_2 = rect_2.area()
         if area_1 == area_2:
             return rect_1
         if area_1 > area_2:
             return rect_1
         return rect_2
-
