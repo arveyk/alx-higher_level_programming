@@ -42,4 +42,7 @@ class Student:
             json - dictionary
         Returns: None yet
         """
-        new_dict = self.__dict__ = json
+        for key, val in json.items():
+            self.__dict__[key] = val
+
+        return dict(self.__dict__)
