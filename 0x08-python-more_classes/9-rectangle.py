@@ -22,32 +22,33 @@ class Rectangle:
         """
         Rectangle.number_of_instances += 1
         self.__height = height
-        # __height should this be commented?
         self.__width = width
-        # __width and this as well?
 
     def __str__(self):
-        """Returns the string representation of rectangle
-        """
         if self.__width == 0 or self.__height == 0:
             return ''
-        return '#'
+        hgt = self.__height
+        while hgt > 0:
+            for wdth in range(self.__width):
+                print('{}'.format(self.print_symbol), end="")
+            if hgt > 1:
+                print()
+            hgt -= 1
+        return ''
 
     def __repr__(self):
         """Returns the 'formal' representation of a rectangle
         """
         if self.__width == 0 or self.__height == 0:
             return ''
-        return f'Rectangle(\'{self.__width}\', {self.__height})'
+        return f'Rectangle({self.__width}, {self.__height})'
 
     @property
     def width(self):
         """Getter: retrives the class attribute
-            Returns: the width of the rectangle
-            Setter: mutates the attributes
-        """
+            Setter: mutates the attributes"""
         return self.__width
-
+        
     @width.setter
     def width(self, value):
         if type(value) is not int:
@@ -94,6 +95,7 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
         Compares two class instances
@@ -106,12 +108,17 @@ class Rectangle:
             raise TypeError('rect_1 must be an instance of Rectangle')
         if type(rect_2) is not Rectangle:
             raise TypeError('rect_2 must be an instance of Rectangle')
-        if rect_1.width == rect_2.width:
+        area_1 = rect_1.area()
+        area_2 = rect_2.area()
+        if area_1 == area_2:
             return rect_1
-
+        if area_1 > area_2:
+            return rect_1
+        return rect_2
+    
     @classmethod
     def square(cls, size=0):
-        """defines a retangle
+        """defines a Square
         Args:
             size: the dimensions of the square
         Return:
