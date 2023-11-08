@@ -29,12 +29,19 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ''
-        return '#'
+        hgt = self.__height
+        while hgt > 0:
+            for wdth in range(self.__width):
+                print('{}'.format(Rectangle.print_symbol), end="")
+            if hgt > 1:
+                print()
+            hgt -= 1
+        return ''
 
     def __repr__(self):
         if self.__width == 0 or self.__height == 0:
             return ''
-        return f'Rectangle(\'{self.__width}\', {self.__height})'
+        return f'Rectangle({self.__width}, {self.__height})'
 
     @property
     def width(self):
