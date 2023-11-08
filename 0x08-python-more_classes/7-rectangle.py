@@ -11,7 +11,7 @@ class Rectangle:
         number_of_instances: counts number of triangles created
     """
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initialize every intatance object
@@ -32,7 +32,7 @@ class Rectangle:
         hgt = self.__height
         while hgt > 0:
             for wdth in range(self.__width):
-                print('{}'.format(Rectangle.print_symbol), end="")
+                print('{}'.format(self.print_symbol), end="")
             if hgt > 1:
                 print()
             hgt -= 1
