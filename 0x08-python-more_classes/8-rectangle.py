@@ -27,18 +27,23 @@ class Rectangle:
         # __width and this as well?
 
     def __str__(self):
-        """Returns the string representation of rectangle
-        """
         if self.__width == 0 or self.__height == 0:
             return ''
-        return '#'
+        hgt = self.__height
+        while hgt > 0:
+            for wdth in range(self.__width):
+                print('{}'.format(self.print_symbol), end="")
+            if hgt > 1:
+                print()
+            hgt -= 1
+        return ''
 
     def __repr__(self):
         """Returns the 'formal' representation of a rectangle
         """
         if self.__width == 0 or self.__height == 0:
             return ''
-        return f'Rectangle(\'{self.__width}\', {self.__height})'
+        return f'Rectangle({self.__width}, {self.__height})'
 
     @property
     def width(self):
@@ -94,6 +99,7 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
         Compares two class instances
@@ -102,15 +108,15 @@ class Rectangle:
                 rect_2: second class att
             Returns: rect_1 if rect_1 is equal to rect_2
         """
+        area_1 = int(rect_1.area())
+        area_2 = int(rect_2.area())
         if type(rect_1) is not Rectangle:
             raise TypeError('rect_1 must be an instance of Rectangle')
         if type(rect_2) is not Rectangle:
             raise TypeError('rect_2 must be an instance of Rectangle')
-        if Rectangle.__eq__(rect_1, rect_2) is rect_1:
+        if area_1 == area_2:
             return rect_1
-    def __eq__(rect_1, rect_2):
-        if rect_1.__width != rect_2.__width:
-            return None
-        if rect_1.__height != rect_2.__height:
-            return None
-        return rect_1
+        if area_1 > area_2:
+            return rect_1
+        return rect_2
+
