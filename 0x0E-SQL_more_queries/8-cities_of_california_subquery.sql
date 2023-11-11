@@ -1,4 +1,5 @@
 -- Script that lists all cities of calif
-SELECT name FROM hbtn_0d_usa
-WHERE name='California'
-ORDER BY cities.id ASC;
+SELECT * 
+FROM cities
+WHERE name = 'California'
+ORDER BY id ASC;
