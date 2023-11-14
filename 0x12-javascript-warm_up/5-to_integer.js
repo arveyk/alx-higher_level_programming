@@ -1,16 +1,15 @@
 #!/usr/bin/node
 const { argv } = require('node:process');
-let count = 0;
 let var1;
-let var2;
 argv.forEach((val, index) => {
   count = index;
   if (count === 2) {
     var1 = val;
   }
-  if (count === 3) {
-    var2 = val;
-  }
 });
-
-console.log(var1 + ' is ' + var2);
+let num = Number(var1);
+if ((typeof num) === Number) {
+  console.log('My number is: ', var1);
+} else {
+  console.log('Not a number');
+}
