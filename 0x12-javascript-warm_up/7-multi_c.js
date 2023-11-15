@@ -18,4 +18,4 @@ if (count == 1) {
     num -= 1;
   }
 }
-
+export * from "7-multi_c"
