@@ -1,21 +1,11 @@
 #!/usr/bin/node
-let count = 0;
-let num;
-const { argv } = require('node:process');
+const argv = parseInt(process.argv[2]);
 
-argv.forEach((val, index) => {
-  count = index;
-  if (index == 2) {
-    num = Number(val);
-  }
-});
 
-if (count == 1) {
+if (!argv) {
   console.log('Missing number of occurences');
 } else {
-  while (num > 0) {
+  for (let m = 0; m < argv; m++) {
     console.log('C is fun');
-    num -= 1;
   }
 }
-export * from "7-multi_c"
