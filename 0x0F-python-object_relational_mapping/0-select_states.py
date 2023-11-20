@@ -19,4 +19,4 @@ if __name__ == '__main__':
 
         db = MySQLdb.connect(user=username, passwd=password, db=db_name)
         c_ursor = db.cursor()
-        c_ursor.execute("SHOW TABLES")
+        c_ursor.execute("SELECT * FROM states")
