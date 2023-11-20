@@ -18,10 +18,10 @@ class Rectangle(BaseGeometry):
         Returns: No return value
         """
         super().__init__()
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+    def integer_validator(self, name,value):
+        super().integer_validator(name, value)
 
     def __str__(self):
         """ returns the string representation of rectangle class
