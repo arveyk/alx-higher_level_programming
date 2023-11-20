@@ -15,3 +15,8 @@ if __name__ == '__main__':
         c_ursor = db.cursor()
         qry = ("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id")
         c_ursor.execute(qry)
+
+        rows = c_ursor.fetchall()
+
+        for echR in rows:
+            print(echR)
