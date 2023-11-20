@@ -20,3 +20,8 @@ if __name__ == '__main__':
         db = MySQLdb.connect(user=username, passwd=password, db=db_name)
         c_ursor = db.cursor()
         c_ursor.execute("SELECT * FROM states")
+
+        rows = c_ursor.fetchall()
+
+        for eachRow in rows:
+            print(eachRow)
