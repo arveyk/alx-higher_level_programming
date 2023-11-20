@@ -14,6 +14,9 @@ if __name__ == '__main__':
 
         db = MySQLdb.connect(user=usrname, passwd=password, db=db_name)
         c_ursor = db.cursor()
-        qry = ("SELECT * FROM states WHERE name = %s  ORDER BY states.id", (stt,))
-        c_ursor.execute(qry)
-        c_ursor.fetchall()
+        stmt = """SELECT * FROM states WHERE name = %s  ORDER BY states.id"""
+        c_ursor.execute(stmt, (stt,))
+        rows = c_ursor.fetchall()
+
+        for eachRow in rows:
+            print(eachRow)
