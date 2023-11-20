@@ -17,9 +17,9 @@ class Rectangle(BaseGeometry):
 
         Returns: No return value
         """
-        super().__init__()
         self.__width = width
         self.__height = height
+
     def integer_validator(self, name,value):
         super().integer_validator(name, value)
 
