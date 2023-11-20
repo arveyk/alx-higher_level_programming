@@ -12,6 +12,8 @@ class Square(Rectangle):
             Returns: no explicit return value
         """
         super().__init__(size, size)
-        self.integer_validator("size", size)
         self.__size = size
         self.area()
+
+        def integer_validator(self, name, size):
+            self.integer_validator("size", size)
