@@ -1,2 +1,3 @@
 #!/bin/bash
-curl -sX DELETE $1
+# Script for sending a GET request
+curl -sX $1
