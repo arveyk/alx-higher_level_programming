@@ -10,8 +10,15 @@ class Rectangle {
       this.height = h;
     }
   }
+
   print () {
-   
+    let printChar = '';
+    for (let span = 0; span < this.width; span++) {
+      printChar += 'X';
+    }
+    for (let depth = 0; depth < this.height; depth++) {
+      console.log(printChar);
+    }
   }
 }
 
