@@ -1,7 +1,7 @@
 -- Script that lists all cities of calif
-SELECT cities.id AS id, name
+SELECT id, name
 FROM cities
 WHERE 
-	id = (SELECT state_id FROM states
+	state_id IN (SELECT state_id FROM states
 		WHERE states.name = 'California')
 ORDER BY id ASC;
