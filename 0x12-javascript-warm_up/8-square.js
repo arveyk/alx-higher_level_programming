@@ -3,7 +3,7 @@ const num = parseInt(process.argv[2]);
 let hash = 'X';
 
 if (!num) {
-  console.log('Missing number of occurences');
+  console.log('Missing size');
 } else {
   let count = num;
   while (count > 1) {
