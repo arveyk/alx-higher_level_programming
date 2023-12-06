@@ -1,15 +1,10 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
-let var1;
-argv.forEach((val, index) => {
-  count = index;
-  if (count === 2) {
-    var1 = val;
-  }
-});
-let num = Number(var1);
-if ((typeof num) === Number) {
-  console.log('My number is: ', var1);
-} else {
+/* const argv = require('node:process'); */
+const argv = process.argv[2];
+
+let num = parseInt(argv);
+if (Number.isNaN(num)) {
   console.log('Not a number');
+} else {
+  console.log('My number is: ', num);
 }
