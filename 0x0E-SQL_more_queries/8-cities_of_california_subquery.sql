@@ -2,6 +2,6 @@
 SELECT cities.id AS id, name
 FROM cities
 WHERE 
-	id = (SELECT states.id FROM states
+	id = (SELECT DISTINCT state_id FROM states
 		WHERE states.name = 'California')
 ORDER BY id ASC;
