@@ -1,3 +1,4 @@
 #!/bin/bash
 # Script to post JSON request
-curl -s  "$1" -d cat "$2" 
+file="cat $2"
+curl -s  "$1" -d "file" 
