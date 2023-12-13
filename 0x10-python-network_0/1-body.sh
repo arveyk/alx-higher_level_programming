@@ -1,3 +1,4 @@
 #!/bin/bash
 # Script for sending a GET request
-curl -sX $1
+url=$1
+curl -Xs "$url"
