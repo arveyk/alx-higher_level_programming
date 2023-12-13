@@ -1,3 +1,3 @@
 #!/bin/bash
 # Script for sending a GET request
-curl -sX -b GET "$1"
+curl -sX -G "$1"
