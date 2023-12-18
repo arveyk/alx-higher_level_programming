@@ -5,7 +5,7 @@ import sys
 
 if __name__ == '__main__':
     url = sys.argv[1]
-    with urllib.request.urlopen(url) as req:
-        resp = req.read()
-        
-    print(resp.header)
+    req = urllib.request.Request(url)
+    with urllib.request.urlopen(url) as resp:
+        hdr = resp.read()
+        print(hdr)
