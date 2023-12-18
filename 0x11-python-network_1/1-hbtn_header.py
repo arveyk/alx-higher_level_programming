@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# Script sends request to url
+""" Script sends request to url
+"""
 import urllib.request
 import sys
 
