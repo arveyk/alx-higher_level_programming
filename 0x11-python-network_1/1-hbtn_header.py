@@ -8,6 +8,4 @@ if __name__ == '__main__':
     with urllib.request.urlopen(url) as req:
         resp = req.read()
         
-    for strg in resp:
-        if strg == "X-Request-Id":
-            print(strg)
+    print(resp.header)
