@@ -10,7 +10,7 @@ if __name__ == "__main__":
     """ Only functions when not imported
     """
     url = sys.argv[1]
-    data_dict = {"email" : sys.argv[2]}
+    data_dict = {"email": sys.argv[2]}
     data = parse.urlencode(data_dict)
     data = data.encode('ascii')
 
