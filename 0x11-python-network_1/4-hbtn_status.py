@@ -8,4 +8,4 @@ resp = requests.get(url)
 
 print("Body response:")
 print("\t- type:", type(resp.headers["Content-type"]))
-print("\t- content: ", (resp.content.decode('utf-8')))
+print("\t- content:", (resp.content.decode('utf-8')))
