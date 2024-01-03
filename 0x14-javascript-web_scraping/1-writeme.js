@@ -2,12 +2,11 @@
 
 const fs = require('fs');
 
-fileName = process.argv[2];
-text = process.argv[3];
+const fileName = process.argv[2];
+const text = process.argv[3];
 
 fs.writeFile(fileName, text, err => {
   if (err) {
-    console.error(error);
+    console.error(err);
   }
 });
-
