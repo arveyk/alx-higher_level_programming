@@ -1,18 +1,13 @@
 #!/usr/bin/node
-const url = process.argv[2];
-const fetch = (...args) => import ('node-fetch').then(({default: fetch}) => fetch(...args)); 
 
-/* request(url, function (error, response, body) {
-  console.error('error', error);
-  console.log('statusCode:', response && response.statusCode);
+const request = require('request');
+const movieId = process.argv[2];
+const url = 'https://swapi-api.alx-tools.com/api/films/' + movieId;
+
+request(url, function (error, response, body) {
+  if (error) {
+    console.error(error);
+  }
+  const bodyResp = JSON.parse(body);
+  console.log(bodyResp.title);
 });
-*/
-
-fetch(url)
-	.then((response) => response.text())
-	.then((data) => {
-	    console.log(data);
-	})
-	.catch((error) => {
-	    console.error(error);
-	});
