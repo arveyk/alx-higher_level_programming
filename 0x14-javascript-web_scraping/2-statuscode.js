@@ -2,11 +2,10 @@
 
 const url = process.argv[2];
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
-const request = require('require');
+const request = require('request');
 
 request(url, function (error, response, body) {
-  console.error('error', error);
-  console.log('code:', response.statusCode);
+  console.log('code:', response && response.statusCode);
 });
 
 /*
