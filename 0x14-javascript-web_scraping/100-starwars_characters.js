@@ -32,5 +32,5 @@ request(starWrs, function (error, response, body) {
 });
 
 if (characters) {
-  console.log('OK');
+  process.stdout.write('OK');
 }
