@@ -23,8 +23,14 @@ request(starWrs, function (error, response, body) {
     for (let count = 0; count < Resp.results.length; count++) {
       characters.push(Resp.results[count].name);
     }
-    for (let nameCount = 0; nameCount < characters.length; nameCount++) {
+    /*
+     * for (let nameCount = 0; nameCount < characters.length; nameCount++) {
       console.log(characters[nameCount]);
     }
+    */
   });
 });
+
+if (characters) {
+  console.log('OK');
+}
