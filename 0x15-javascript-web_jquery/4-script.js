@@ -1,5 +1,8 @@
 $(function() 
   {
-    $("DIV#toggle_header").addEventListener('toggle').style.color("#FF0000");
+    $("DIV#toggle_header").on("click", function() 
+    {
+       $("header").toggleClass("red");
+    }
   }
 );
