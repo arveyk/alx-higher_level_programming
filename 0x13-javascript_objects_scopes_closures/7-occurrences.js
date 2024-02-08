@@ -1,15 +1,15 @@
 #!/usr/bin/node
 
-nbOccurences = function (list, searchElement) {
-  let l_var = 0;
+const nbOccurences = function (list, searchElement) {
+  let lVar = 0;
   let count = 0;
-  while (l_var < list.length) {
-    if (list[l_var] == searchElement) {
-      count++; 
+  while (lVar < list.length) {
+    if (list[lVar] === searchElement) {
+      count++;
     }
-    l_var++;
+    lVar++;
   }
   return (count);
-}
+};
 
-module.exports.nbOccurences = nbOccurences
+module.exports.nbOccurences = nbOccurences;
