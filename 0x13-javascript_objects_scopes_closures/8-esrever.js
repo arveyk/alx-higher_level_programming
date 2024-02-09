@@ -7,4 +7,4 @@ const esrever = function (list) {
   }
   return (listRev);
 };
-module.exports = esrever;
+exports.esrever = esrever;
