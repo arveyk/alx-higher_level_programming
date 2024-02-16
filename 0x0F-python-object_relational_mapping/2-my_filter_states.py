@@ -18,8 +18,6 @@ if __name__ == '__main__':
         c_ursor = db.cursor()
         query = "SELECT * FROM states WHERE name = %s  ORDER BY states.id"
         c_ursor.execute(query, (stt,))
-        #query = "SELECT * FROM states WHERE name = " + stt +"  ORDER BY states.id", stt)
-        #c_ursor.execute(query.format())
         rows = c_ursor.fetchall()
 
         for eachRow in rows:
