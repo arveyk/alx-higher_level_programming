@@ -17,6 +17,6 @@ if __name__ == '__main__':
             ORDER BY states.id")
     c_ursor.execute(qry, (stt,))
     rows = c_ursor.fetchall()
-    
+
     for eachRow in rows:
         print('{}'.format(eachRow))
