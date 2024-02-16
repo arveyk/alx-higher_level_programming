@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 ''' Class square definition '''
 Rectangle = __import__('9-rectangle').Rectangle
+
+
 class Square(Rectangle):
     ''' Square, special kind of rectangle
     '''
