@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
         db = MySQLdb.connect(user=usrname, port=3306, passwd=pwd, db=db_name)
         c_ursor = db.cursor()
-        query = "SELECT * FROM states WHERE name = %s  ORDER BY states.id"
+        query = "SELECT * FROM states WHERE BINARY name = %s  ORDER BY states.id"
         c_ursor.execute(query, (stt,))
         rows = c_ursor.fetchall()
 
