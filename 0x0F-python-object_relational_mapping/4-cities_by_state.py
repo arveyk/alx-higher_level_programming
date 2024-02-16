@@ -13,6 +13,9 @@ if __name__ == '__main__':
 
         db = MySQLdb.connect(user=usrname, passwd=password, db=db_name)
         c_ursor = db.cursor()
-        qry = ("SELECT * FROM cities ORDER BY cities.id ASC")
+        qry = "SELECT * FROM cities ORDER BY cities.id ASC"
         c_ursor.execute(qry)
-        c_ursor.fetchall()
+        rows = c_ursor.fetchall()
+
+        for eachRow in rows:
+            print("{}".format(eachRow))
