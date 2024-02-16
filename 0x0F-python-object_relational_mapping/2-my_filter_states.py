@@ -5,6 +5,8 @@ import sys
 
 
 if __name__ == '__main__':
+    """ this conditions ensures script is not executed when imported
+    """
     if len(sys.argv) == 5:
         argv = sys.argv
         usrname = argv[1]
@@ -14,10 +16,11 @@ if __name__ == '__main__':
 
         db = MySQLdb.connect(user=usrname, port=3306, passwd=pwd, db=db_name)
         c_ursor = db.cursor()
-        #stmt = "SELECT * FROM states WHERE name = (%s)  ORDER BY states.id"
-        # c_ursor.execute(stmt)
-        c_ursor.execute("SELECT * FROM states WHERE name = (%s)  ORDER BY states.id", stt)
+        query = "SELECT * FROM states WHERE name = %s  ORDER BY states.id"
+        c_ursor.execute(query, (stt,))
+        #query = "SELECT * FROM states WHERE name = " + stt +"  ORDER BY states.id", stt)
+        #c_ursor.execute(query.format())
         rows = c_ursor.fetchall()
 
         for eachRow in rows:
-            print("%s" % eachRow)
+            print("{}".format(eachRow))
