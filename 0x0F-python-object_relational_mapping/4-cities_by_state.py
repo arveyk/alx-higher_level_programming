@@ -13,7 +13,10 @@ if __name__ == '__main__':
 
         db = MySQLdb.connect(user=usrname, passwd=password, db=db_name)
         c_ursor = db.cursor()
-        qry = "SELECT * FROM cities ORDER BY cities.id ASC"
+        # qry = "SELECT id, name FROM cities ORDER BY cities.id ASC"
+        qry = "SELECT cities.id, cities.name, states.name\
+                FROM  cities INNER JOIN states\
+                ON cities.state_id = states.id"
         c_ursor.execute(qry)
         rows = c_ursor.fetchall()
 
