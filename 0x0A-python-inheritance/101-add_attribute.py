@@ -11,5 +11,7 @@ def add_attribute(obj, name, value):
             value: the value of the attribute
         Return: No explicit return value
     """
-    if not (setattr(obj, name, value)):
+    obj.name = value
+    error = getattr(obj, name value)
+    if (error == 'can\'t add new attribute'):
         raise TypeError('can\'t add new attribute')
