@@ -12,10 +12,10 @@ Base = declarative_base()
 class State(Base):
     """ Definition of State class
     """
-    __tablename__ = 'state'
+    __tablename__ = 'states'
 
-    id = Column('state_id', Integer, primary_key=True, nullable=False)
-    name = Column('name', String(128), nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False)
+    name = Column(String(128), nullable=False)
 
 #    state = relationship("State", back_populates="base")
 
