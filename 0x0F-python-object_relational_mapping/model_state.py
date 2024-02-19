@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+""" Module to declare the base
+"""
+
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy.orm import sessionmaker
+
+Base = declarative_base()
+engine = create_engine(
+        "mysql+pymysql://sylvain:passwd@localhost/db?\
+                host=localhost?port=3306")
+
+
+class State(Base):
+    """ Definition of State class
+    """
+    __tablename__ = 'state'
+    link to table states
+
+    id = Column(Integer, primary_key=True, nullable=False),
+    name = Column(String(128), nullable=False)
+#    state = relationship("State", back_populates="base")
+
+# Session = sessionmaker(bind=engine)
+# session = Session()
