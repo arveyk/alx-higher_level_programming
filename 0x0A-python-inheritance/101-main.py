@@ -14,4 +14,4 @@ try:
     add_attribute(a, "name", "Bob")
     print(a.name)
 except Exception as e:
-    print("[{}] {}".format(e.__class__.name__, e))
+    print("[{}] {}".format(e.__class__.__name__, e))
