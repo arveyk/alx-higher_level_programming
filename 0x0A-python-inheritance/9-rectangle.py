@@ -21,8 +21,8 @@ class Rectangle(BaseGeometry):
         self.__height = height
         super().integer_validator('width', width)
         super().integer_validator('height', height)
-        #self.integer_validator('width', width)
-        #self.integer_validator('height', height)
+        # self.integer_validator('width', width)
+        # self.integer_validator('height', height)
 
     def __str__(self):
         """ returns the string representation of rectangle class
