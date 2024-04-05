@@ -1,6 +1,14 @@
 #!/usr/bin/python3
-""" Scritpt to read and parse from stdin"""
+""" Script to read and parse from stdin"""
 import sys
 
-for line in sys.stdin:
-    print(line)
+count = 0;
+try:
+    report = sys.stdin
+    for line in report:
+        if (count % 10):
+            print('File size:{}'.format(line[-4:-2]))
+        print(': {}'.format(line[-2:]))
+        count += 1
+except KeyboardInterrupt:
+    print('File size:{} {}'.format(line[0:5], len(line)))
