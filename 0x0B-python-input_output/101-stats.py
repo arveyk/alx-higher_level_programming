@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-""" Script to read and parse from stdin"""
+""" Script to read and parse from stdin
+"""
 import sys
 
-count = 0;
+count = 0
 try:
     """ receive IP address info an prints out activies
     from users of given IP"""
