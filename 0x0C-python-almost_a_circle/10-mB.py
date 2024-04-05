@@ -2,43 +2,28 @@
 """ Check """
 from models.square import Square
 
-s = Square(5)
-
-try:
-    s.size = -12
-    print("ValueError exception not raised")
-    exit(1)
-except ValueError as e:
-    if str(e) != "width must be > 0":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
+s = Square(12)
+if s is None:
+    print("Can't create Square")
     exit(1)
 
-try:
-    s.size = -89
-    print("ValueError exception not raised")
-    exit(1)
-except ValueError as e:
-    if str(e) != "width must be > 0":
-        print("Wrong exception message: {}".format(e))
+for attribute in list(s.__dict__.keys()):
+    if "size" in attribute:
+        print("You are not allowed to add any new attribute for size: {}".format(attribute))
         exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
+
+if s.size != 12:
+    print("Wrong size getter: {}".format(s.size))
     exit(1)
 
-try:
-    s.size = 0
-    print("ValueError exception not raised")
+s.size = 5
+
+if s.size != 5:
+    print("Wrong size getter: {}".format(s.size))
     exit(1)
-except ValueError as e:
-    if str(e) != "width must be > 0":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
+
+print("OK", end="")
+
 
 print("OK", end="")
 print()
