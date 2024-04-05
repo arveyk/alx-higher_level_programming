@@ -14,7 +14,8 @@ class Square(Rectangle):
         self.__size = size
 
     def __str__(self):
-        return f'[{Square.__name__}] ({self.id}) {self.x}/{self.y} - {self.size}'
+        name = Square.__name__
+        return f'[{name}] ({self.id}) {self.x}/{self.y} - {self.size}'
 
     @property
     def size(self):
