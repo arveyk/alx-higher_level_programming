@@ -17,10 +17,10 @@ class Rectangle(Base):
                 id: identification
         """
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
@@ -137,19 +137,19 @@ class Rectangle(Base):
                 k = 0
                 while k < 5:
                     if value is not None:
-                        if kw_str[k] == str(key) and k == 0:
-                            self.id = value
-                        elif kw_str[k] == str(key) and k == 1:
-                            self.__width = value
-                        elif kw_str[k] == str(key) and k == 2:
-                            self.__height = value
-                        elif kw_str[k] == str(key) and k == 3:
-                            self.__x = value
-                        elif kw_str[k] == str(key) and k == 4:
-                            self.__y = value
+                        if kw_str[k]:
+                            if kw_str[k] == str(key) and k == 0:
+                                self.id = value
+                            elif kw_str[k] == str(key) and k == 1:
+                                self.__width = value
+                            elif kw_str[k] == str(key) and k == 2:
+                                self.__height = value
+                            elif kw_str[k] == str(key) and k == 3:
+                                self.__x = value
+                            elif kw_str[k] == str(key) and k == 4:
+                                self.__y = value
                     k += 1
         else:
-
             args_list = [0, 0, 0, -1, -1]
             p = 0
             for ar_g in args:
@@ -167,3 +167,17 @@ class Rectangle(Base):
                 self.__x = args_list[3]
             if (args_list[4] >= 0):
                 self.__y = args_list[4]
+    
+    def to_dictionary(self):
+        """ Returns the dictionary representation of a rectangle
+            Args: None
+            Return: dictionary representation of a rectangle
+        """
+        rect_dict_rep = {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y
+                }
+        return rect_dict_rep
