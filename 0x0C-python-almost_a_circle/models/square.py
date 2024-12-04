@@ -53,18 +53,14 @@ class Square(Rectangle):
                     args_list[p] = ar_g
                 p += 1
 
-            #if (args_list[0] != 0):
             if (args[0]):
-                self.id = args_list[0]
-            #if (args_list[1] != 0):
-            if (len(args) == 2):
-                self.size = args_list[1]
-            #if (args_list[2] >= 0):
-            if (len(args) == 3):
-                self.x = args_list[2]
-            #if (args_list[3] >= 0):
+                self.id = args[0]
+            if (len(args) >= 2):
+                self.size = args[1]
+            if (len(args) >= 3):
+                self.x = args[2]
             if (len(args) == 4):
-                self.y = args_list[3]
+                self.y = args[3]
         elif kwargs is not None and (args is None or len(args) == 0):
             kw_list = [0, 0, 0, -1, -1]
             kw_str = ["id", "size", "x", "y"]
