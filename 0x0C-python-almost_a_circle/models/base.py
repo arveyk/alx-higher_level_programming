@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for defining a Base class
 """
+import json
 
 
 class Base:
