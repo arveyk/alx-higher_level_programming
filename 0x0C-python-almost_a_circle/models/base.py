@@ -35,13 +35,13 @@ class Base:
             return "[]"
         json_rep = json.JSONEncoder().encode(list_dictionaries)
         return json_rep
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """ writes the JSON representation of list_objs
             Args:
                 list_objs: list of instances that inherit from Base e.g.rect or
-                sqr instances 
+                sqr instances
             Returns: No return value
         """
         if list_objs is None:
@@ -72,7 +72,7 @@ class Base:
             Returns: the list of instances, empty list if file does not exist
         """
         pass
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """ For Serializing a file in CSC
