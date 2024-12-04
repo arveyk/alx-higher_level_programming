@@ -30,9 +30,9 @@ class Base:
             Returns: JSON repre of the list of dictionaries
         """
         if list_dictionaries is None:
-            return []
+            return "[]"
         elif len(list_dictionaries) == 0:
-            return []
+            return "[]"
         json_rep = json.JSONEncoder().encode(list_dictionaries)
         return json_rep
     
