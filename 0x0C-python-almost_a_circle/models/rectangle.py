@@ -49,7 +49,6 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, high):
-        #if type(high) is not int:
         if not isinstance(high, int):
             raise TypeError('height must be an integer')
         if high <= 0:
@@ -168,7 +167,7 @@ class Rectangle(Base):
                 self.__x = args_list[3]
             if (args_list[4] >= 0):
                 self.__y = args_list[4]
-    
+
     def to_dictionary(self):
         """ Returns the dictionary representation of a rectangle
             Args: None
