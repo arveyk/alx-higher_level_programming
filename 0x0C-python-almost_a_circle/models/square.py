@@ -46,42 +46,42 @@ class Square(Rectangle):
         Returns: No return Value
         """
         if args:
-            args_list = [0, 0, 0, -1, -1]
+            args_list = [0, 0, 0, -1]
             p = 0
             for ar_g in args:
                 if ar_g is not None:
                     args_list[p] = ar_g
                 p += 1
 
-            if (args_list[0] != 0):
+            #if (args_list[0] != 0):
+            if (args[0]):
                 self.id = args_list[0]
-            if (args_list[1] != 0):
-                self.__width = args_list[1]
-            if (args_list[2] != 0):
-                self.__height = args_list[2]
-            if (args_list[3] >= 0):
-                self.__x = args_list[3]
-            if (args_list[4] >= 0):
-                self.__y = args_list[4]
+            #if (args_list[1] != 0):
+            if (len(args) == 2):
+                self.size = args_list[1]
+            #if (args_list[2] >= 0):
+            if (len(args) == 3):
+                self.x = args_list[2]
+            #if (args_list[3] >= 0):
+            if (len(args) == 4):
+                self.y = args_list[3]
         elif kwargs is not None and (args is None or len(args) == 0):
             kw_list = [0, 0, 0, -1, -1]
-            kw_str = ["id", "width", "height", "x", "y"]
+            kw_str = ["id", "size", "x", "y"]
 
             for key, value in kwargs.items():
                 k = 0
-                while k < 5:
+                while k < 4:
                     if value is not None:
                         if kw_str[k]:
                             if kw_str[k] == str(key) and k == 0:
                                 self.id = value
                             elif kw_str[k] == str(key) and k == 1:
-                                self.__width = value
+                                self.size = value
                             elif kw_str[k] == str(key) and k == 2:
-                                self.__height = value
+                                self.x = value
                             elif kw_str[k] == str(key) and k == 3:
-                                self.__x = value
-                            elif kw_str[k] == str(key) and k == 4:
-                                self.__y = value
+                                self.y = value
                     k += 1
 
     def to_dictionary(self):
