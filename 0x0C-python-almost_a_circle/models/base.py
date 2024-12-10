@@ -74,7 +74,7 @@ class Base:
             cls:
             dictionary: key word args list of a dictionary
         """
-        inst = cls(17, 12, 34, 7, 9)
+        inst = cls(17, 12)
         inst.update(**dictionary)
         return inst
 
