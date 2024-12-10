@@ -2,6 +2,7 @@
 """Module for defining a Base class
 """
 import json
+import os
 
 
 class Base:
@@ -59,7 +60,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ Returns JSON string representation json_string
+        """ Returns list of JSON string representation json_string
         """
         if json_string is None:
             return []
@@ -88,7 +89,17 @@ class Base:
                 cls: current class using this method
             Returns: the list of instances, empty list if file does not exist
         """
-        pass
+        file_name = cls.__name__ + '.json'
+        if os.path.isfile(file_name):
+            instList = []
+            with open(file_name, 'r') as f:
+                data = f.read()
+                data = cls.from_json_string(data)
+            for elem in data:
+                instList.append(cls.create(**elem))
+            return instList
+        else:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
