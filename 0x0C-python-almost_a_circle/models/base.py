@@ -74,7 +74,9 @@ class Base:
             cls:
             dictionary: key word args list of a dictionary
         """
-        update(*arg, **kwargs)
+        inst = cls(17, 12, 34, 7, 9)
+        inst.update(**dictionary)
+        return inst
 
     @classmethod
     def load_from_file(cls):
