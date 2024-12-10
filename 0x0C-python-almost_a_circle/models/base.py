@@ -74,7 +74,10 @@ class Base:
             cls:
             dictionary: key word args list of a dictionary
         """
-        inst = cls(17, 12)
+        if 'size' in dictionary:
+            inst = cls(17)
+        else:
+            inst = cls(17, 12)
         inst.update(**dictionary)
         return inst
 
