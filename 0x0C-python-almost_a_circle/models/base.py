@@ -44,18 +44,18 @@ class Base:
                 sqr instances
             Returns: No return value
         """
+        strData = []
         if list_objs is None:
-            list_objs = []
+            strData = '[]'
         else:
             objData = []
             for ob in list_objs:
                 objData.append(ob.to_dictionary())
             strData = cls.to_json_string(objData)
-            #            ob.__repr__())
 
-            fileName = cls.__name__ + ".json"
-            with open(fileName, mode="wt") as f:
-                f.write((strData))
+        fileName = cls.__name__ + ".json"
+        with open(fileName, mode="wt") as f:
+            f.write((strData))
 
     @staticmethod
     def from_json_string(json_string):
