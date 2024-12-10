@@ -33,12 +33,14 @@ class Base:
             return "[]"
         elif len(list_dictionaries) == 0:
             return "[]"
-        json_rep = json.JSONEncoder().encode(list_dictionaries)
+        json_rep = []
+        for elem in list_dictionaries:
+            json_rep.append(json.JSONEncoder().encode(elem))
         return json_rep
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ writes the JSON representation of list_objs
+        """ Writes the JSON representation of list_objs
             Args:
                 list_objs: list of instances that inherit from Base e.g.rect or
                 sqr instances
@@ -47,20 +49,25 @@ class Base:
         if list_objs is None:
             list_objs = []
         else:
-            obj_data = []
+            objData = []
             for ob in list_objs:
-                obj_data.append(ob.__dict__)
-            strData = cls.to_json_string((obj_data))
+                objData.append(ob.to_dictionary())
+            strData = cls.to_json_string(objData)
+            #            ob.__repr__())
 
             fileName = cls.__name__ + ".json"
             with open(fileName, mode="wt") as f:
-                f.write(strData)
+                f.write(str(strData))
 
     @staticmethod
     def from_json_string(json_string):
         """ Returns JSON string representation json_string
         """
-        pass
+        if json_string is None:
+            return []
+        if len(json_string) == 0:
+            return []
+        return list(json.loads(str(json_string)))
 
     @classmethod
     def create(cls, **dictionary):
