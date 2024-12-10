@@ -33,9 +33,7 @@ class Base:
             return "[]"
         elif len(list_dictionaries) == 0:
             return "[]"
-        json_rep = []
-        for elem in list_dictionaries:
-            json_rep.append(json.JSONEncoder().encode(elem))
+        json_rep = json.JSONEncoder().encode(list_dictionaries)
         return json_rep
 
     @classmethod
@@ -57,7 +55,7 @@ class Base:
 
             fileName = cls.__name__ + ".json"
             with open(fileName, mode="wt") as f:
-                f.write(str(strData))
+                f.write((strData))
 
     @staticmethod
     def from_json_string(json_string):
