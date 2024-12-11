@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """Module for defining a Base class
 """
+import csv
 import json
 import os
+import turtle
 
 
 class Base:
@@ -111,8 +113,32 @@ class Base:
         """
         # format rect:  id, width, height, x, y
         #        sqr:   id, size, x, y
-        pass
 
+        strData = []
+        if list_objs is None:
+            strData = '[]'
+        else:
+            objData = []
+            for ob in list_objs:
+                objData.append(ob.to_dictionary())
+            #strData = cls.to_json_string(objData)
+            #strData = 
+
+        csv_file = cls.__name__ + ".csv"
+        rect_fields = ['id', 'width', 'height', 'x', 'y']
+        sqr_fields = ['id', 'size', 'x', 'y']
+        with open(csv_file, mode="wt") as csvF:
+            if cls.__name__ == 'Rectangle':
+                writer = csv.DictWriter(csvF, fieldnames=rect_fields)
+                writer.writeheader()
+                for elem in objData:
+                    writer.writerow(elem)
+            else:
+                writer = csv.DictWriter(csvF, fieldnames=sqr_fields)
+                writer.writeheader()
+                for elem in objData:
+                    writer.writerow(elem)
+    
     @classmethod
     def load_from_file_csv(cls):
         """ For deserializing a CSV file
@@ -120,7 +146,24 @@ class Base:
             cls:
         Returns: No return value?
         """
-        pass
+        file_name = cls.__name__ + '.csv'
+        if os.path.isfile(file_name):
+            instList = []
+            with open(file_name, 'r', newline='') as csvfile:
+                reader = csv.DictReader(csvfile)
+                #data = cls.from_json_string(data)
+                for row in reader:
+                    '''objItem = {'id': row,
+                            'width': row[1],
+                            'height': row[2],
+                            'x': row[3],
+                            'y': rows[4]
+                    }'''
+                    instList.append(cls.create(**row))
+                return instList
+        else:
+            return []
+
 
     def draw(list_rectangles, list_squares):
         """ Opens a window and prints all the rectagles and squares
@@ -129,4 +172,5 @@ class Base:
             list_squares: list of squares to print
         Returns: No return value
         """
-        pass
+        turtle.pencolor('green')
+        list

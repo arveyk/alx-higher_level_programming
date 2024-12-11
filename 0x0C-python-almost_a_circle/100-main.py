@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     Square.save_to_file_csv(list_squares_input)
 
-    list_squares_output = Squares.load_from_file_csv()
+    list_squares_output = Square.load_from_file_csv()
 
     for square in list_squares_input:
         print("[{}] {}".format(id(square), square))
