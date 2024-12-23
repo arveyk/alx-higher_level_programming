@@ -1,3 +1,6 @@
 -- Script that counts
-SELECT genre, COUNT (*) AS number_of_shows FROM hbtb_0d_tvshows
-ORDER number_of_shows DESC
+SELECT tv_genres.name, count(*) AS number_of_shows FROM tv_genres
+LEFT JOIN tv_show_genres
+ON tv_show_genres.genre_id=tv_genres.id
+GROUP BY tv_genres.name
+ORDER BY number_of_shows DESC ;
