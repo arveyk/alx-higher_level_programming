@@ -21,6 +21,3 @@ if __name__ == '__main__':
 
         for echR in rows:
             print(echR)
-
-        cursor.close()
-        db.close()
