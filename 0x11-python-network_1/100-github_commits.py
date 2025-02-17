@@ -21,5 +21,7 @@ if __name__ == '__main__':
     Json_R = resp.json()
     repo_len = len(Json_R)
     for i in range(repo_len):
+        if i == 10:
+            break
         print('{}: {}'.format(Json_R[i].get('sha'),
                               Json_R[i]['commit']['author']['name']))
