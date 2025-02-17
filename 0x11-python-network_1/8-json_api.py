@@ -14,7 +14,9 @@ if __name__ == '__main__':
         if len(r.text) > 0:
             if not validJson:
                 print('Not a valid JSON')
-            elif JSONEmpty:
-                print('No result')           
+            Json_R = None
+            Json_R = r.json()
+            if Json_R:
+                print('No result')
             else:
-                print('[{}] {}'.format(r.content.id, r.content.name))
+                print('[{}] {}'.format(Json_R.get('id', Json_R.get('name')))
