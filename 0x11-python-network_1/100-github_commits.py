@@ -19,6 +19,7 @@ if __name__ == '__main__':
         name, repo)
     resp = requests.get(url)
     Json_R = resp.json()
-    for i in range(10):
+    repo_len = len(Json_R)
+    for i in range(repo_len):
         print('{}: {}'.format(Json_R[i].get('sha'),
                               Json_R[i]['commit']['author']['name']))
